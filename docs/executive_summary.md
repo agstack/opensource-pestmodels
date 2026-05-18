@@ -48,13 +48,13 @@ Disease models compose lower-layer outputs. The Fuzzy Mamdani engine operates on
 
 ## Relationship to Existing Work
 
-This project absorbs and supersedes three legacy AgStack repositories:
+This project is the **evolution** of three existing AgStack and OpenAgri repositories, not a replacement. The original teams retain scientific authority as CODEOWNERS reviewers. See the [OpenAgri Migration Guide](openagri_migration.md) for full details.
 
-| Repository | What we took | What we improved |
+| Repository | What was built there | What this framework adds |
 |-----------|-------------|-----------------|
 | `agstack/pest-models` | GDD, Chill, Leaf Wetness, Powdery Mildew math | Decoupled from proprietary Agralogics API; added UUIDs, types, tests |
-| `agstack/OpenAgri-PestAndDiseaseManagement` | Rule-based risk engine, GDD intervals | Extracted from monolithic service; made composable |
-| `openagri-eu/OpenAgri-PestAndDiseaseManagement` | Fuzzy Mamdani engine, 54 threat definitions, leaf wetness lookup tables | Ported into clean ABC framework; standardized field names |
+| `agstack/OpenAgri-PestAndDiseaseManagement` | Rule-based risk engine, GDD intervals, FastAPI service | Extracted into composable library; added MCP, entry-point registry |
+| `openagri-eu/OpenAgri-PestAndDiseaseManagement` | Fuzzy Mamdani engine, 54 threat definitions, leaf wetness lookup tables | Ported into ABC framework; OpenAgri team retains CODEOWNERS veto authority |
 
 ## Community Strategy
 

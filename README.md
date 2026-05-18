@@ -36,7 +36,7 @@ from agstack_pnd.foundation.types import WeatherDataFrame
 
 model = GrowingDegreeDays()
 result = model.calculate(weather_data, parameters={"base_temp": 10.0})
-print(result.values)  # Daily GDD accumulation
+print(f"Total GDD: {result.summary['total_gdd']}")  # Cumulative GDD
 ```
 
 ## Architecture

@@ -177,11 +177,28 @@ Resources: `pnd://models`, `pnd://crops`
 - `model_runs` -- Calculation audit log
 - `parcels` -- Registered fields for weather pre-fetching
 
-## 9. CI/CD Pipeline
+## 9. CI/CD Pipeline and Quality Gates
 
-- `ci.yaml`: ruff lint/format, mypy strict, pytest, sphinx-build
-- `release.yaml`: build wheel, publish PyPI, push Docker to GHCR
-- `docs.yaml`: deploy Sphinx to GitHub Pages
+### Automated Gates (every PR)
+
+| Gate | Workflow | What it checks |
+|------|----------|----------------|
+| Gate 1: Lint & Format | `ci.yaml` | `ruff check` + `ruff format` |
+| Gate 2: Type Check | `ci.yaml` | `mypy --strict` on all source |
+| Gate 3: Tests | `ci.yaml` | `pytest` -- all unit and integration tests |
+| Gate 4: Catalog & FATFD | `ci.yaml` | Threat catalog schema, model UUID uniqueness, FATFD validator |
+| Docs Build | `ci.yaml` | `sphinx-build` (prevents doc regressions) |
+
+### Human Review (CODEOWNERS)
+
+- Disease models, agronomic models, threat catalog: `@agstack/openagri-maintainers` must approve
+- Foundation, providers, CI/CD: `@agstack/pnd-maintainers` must approve
+- Documentation: both teams
+
+### Release Pipeline
+
+- `release.yaml`: On tag `v*` -- build wheel, publish PyPI, push Docker to GHCR
+- `docs.yaml`: On push to `main`/`master` -- deploy Sphinx to GitHub Pages
 
 ## 10. FATFD Quality Process
 

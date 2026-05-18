@@ -218,9 +218,9 @@ model = registry.get_model(UUID("a1b2c3d4-0004-4000-8000-000000000001"))
 ```python
 from agstack_pnd.catalog.loader import list_crops, list_threats, get_threat
 
-# All supported crops
+# All supported crops (from the bundled seed catalog)
 print(list_crops())
-# ['apple', 'coffee', 'grape', 'olive', 'pear']
+# ['apple', 'coffee', 'grape', 'olive', 'pear', ...]  # expands as catalog grows
 
 # All threats for grape
 for t in list_threats("grape"):

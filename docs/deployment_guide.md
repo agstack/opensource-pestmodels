@@ -1,15 +1,23 @@
 # Deployment Guide
 
+All deployment options expose the REST API and MCP server on the same port. For detailed MCP setup (connecting Claude, Cursor, or other AI agents), see the [MCP Server Guide](mcp_server_guide.md).
+
 ## Option 1: Docker Compose (recommended)
 
 ```bash
-cd docker
+git clone https://github.com/agstack/opensource-pestmodels.git
+cd opensource-pestmodels/docker
 cp .env.example .env
 # Edit .env with your NOAA API token
 docker compose up -d
 ```
 
-The API is available at `http://localhost:8000`. MCP server at `http://localhost:8000/mcp`.
+| Endpoint | URL |
+|----------|-----|
+| REST API | `http://localhost:8000/api/v1/` |
+| MCP Server | `http://localhost:8000/mcp` |
+| OpenAPI Docs | `http://localhost:8000/docs` |
+| Health Check | `http://localhost:8000/health` |
 
 ## Option 2: Direct Python
 
@@ -49,3 +57,10 @@ result = model.calculate(weather_data, {"base_temp": 10.0})
 ## NOAA API Token
 
 Get a free token at https://www.ncdc.noaa.gov/cdo-web/token. It is emailed to you instantly.
+
+## Related Documentation
+
+- [User Manual](user_manual.md) -- How to use the library, API, and MCP server
+- [MCP Server Guide](mcp_server_guide.md) -- Connecting AI agents (Claude, Cursor, custom)
+- [Contributor Guide](contributor_guide.md) -- How to add models, providers, threats
+- [Architecture Design](design_architecture.md) -- Technical architecture
