@@ -1,0 +1,220 @@
+[
+  {
+    "scientific_name": "Venturia inaequalis",
+    "common_name": "Apple scab",
+    "threat_type": "fungus",
+    "crop": "apple",
+    "bio_params": {
+      "t_base": 0.0,
+      "t_lethal_min": -5.0,
+      "t_lethal_max": 40.0,
+      "t_optimal_min": 15.0,
+      "t_optimal_max": 24.0,
+      "min_streak": 3,
+      "min_wetness_hours_critical": 20.0,
+      "min_wetness_hours_high": 14.0,
+      "pheno_frac_lo": 0.05,
+      "pheno_frac_hi": 0.65,
+      "pheno_fraction_ref_gdd5": 2200.0,
+      "extra": {"mills_table_reference": true}
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 90, "hum_hi": 100, "temp_lo": 15, "temp_hi": 24, "rain_min": 2.0, "risk_level": "critical"},
+      {"hum_lo": 80, "hum_hi": 100, "temp_lo": 10, "temp_hi": 28, "rain_min": 1.0, "risk_level": "high"},
+      {"hum_lo": 70, "hum_hi": 90, "temp_lo": 6, "temp_hi": 30, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 70, "temp_lo": 0, "temp_hi": 35, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"mills_table_reference": "Mills/MacHardy infection periods"}
+  },
+  {
+    "scientific_name": "Cydia pomonella",
+    "common_name": "Codling moth",
+    "threat_type": "insect",
+    "crop": "apple",
+    "bio_params": {
+      "t_base": 10.0,
+      "t_lethal_min": -10.0,
+      "t_lethal_max": 40.0,
+      "t_optimal_min": 20.0,
+      "t_optimal_max": 31.0,
+      "min_streak": 2,
+      "min_wetness_hours_critical": 24.0,
+      "min_wetness_hours_high": 24.0,
+      "extra": {
+        "gdd_first_flight": 250,
+        "gdd_peak_first_gen": 468,
+        "gdd_second_flight": 900,
+        "t_upper_threshold": 31
+      }
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 50, "hum_hi": 100, "temp_lo": 20, "temp_hi": 31, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_lo": 40, "hum_hi": 100, "temp_lo": 15, "temp_hi": 33, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_lo": 30, "hum_hi": 100, "temp_lo": 10, "temp_hi": 35, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 100, "temp_lo": 0, "temp_hi": 40, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"gdd_flight_windows": {"first_flight": 250, "peak_first_gen": 468, "second_flight": 900}}
+  },
+  {
+    "scientific_name": "Plasmopora viticola",
+    "common_name": "Downy mildew",
+    "threat_type": "oomycete",
+    "crop": "grape",
+    "bio_params": {
+      "t_base": 10.0,
+      "t_lethal_min": -3.0,
+      "t_lethal_max": 38.0,
+      "t_optimal_min": 18.0,
+      "t_optimal_max": 25.0,
+      "min_streak": 3,
+      "min_wetness_hours_critical": 16.0,
+      "min_wetness_hours_high": 10.0,
+      "pheno_frac_lo": 0.1,
+      "pheno_frac_hi": 0.75,
+      "pheno_fraction_ref_gdd5": 2200.0,
+      "extra": {"goidanich_rule": {"t_min": 11, "rh_min": 90, "rain_min": 10}}
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 90, "hum_hi": 100, "temp_lo": 18, "temp_hi": 25, "rain_min": 10.0, "risk_level": "critical"},
+      {"hum_lo": 80, "hum_hi": 100, "temp_lo": 13, "temp_hi": 30, "rain_min": 5.0, "risk_level": "high"},
+      {"hum_lo": 65, "hum_hi": 90, "temp_lo": 10, "temp_hi": 32, "rain_min": 1.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 65, "temp_lo": 0, "temp_hi": 38, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"goidanich_rule": "T>11C + RH>90% + rainfall>10mm triggers primary infection"}
+  },
+  {
+    "scientific_name": "Uncinula necator",
+    "common_name": "Powdery mildew",
+    "threat_type": "fungus",
+    "crop": "grape",
+    "bio_params": {
+      "t_base": 6.0,
+      "t_lethal_min": -3.0,
+      "t_lethal_max": 40.0,
+      "t_optimal_min": 20.0,
+      "t_optimal_max": 28.0,
+      "min_streak": 3,
+      "min_wetness_hours_critical": 24.0,
+      "min_wetness_hours_high": 24.0,
+      "pheno_frac_lo": 0.1,
+      "pheno_frac_hi": 0.8,
+      "pheno_fraction_ref_gdd5": 2200.0,
+      "extra": {"wetness_effect": "INHIBITORY"}
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 40, "hum_hi": 85, "temp_lo": 20, "temp_hi": 28, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_lo": 30, "hum_hi": 90, "temp_lo": 15, "temp_hi": 32, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_lo": 20, "hum_hi": 95, "temp_lo": 10, "temp_hi": 35, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 100, "temp_lo": 0, "temp_hi": 40, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"wetness_effect": "INHIBITORY -- free water inhibits powdery mildew infection"}
+  },
+  {
+    "scientific_name": "Botrytis cinerea",
+    "common_name": "Grey mold",
+    "threat_type": "fungus",
+    "crop": "grape",
+    "bio_params": {
+      "t_base": 0.0,
+      "t_lethal_min": -5.0,
+      "t_lethal_max": 35.0,
+      "t_optimal_min": 15.0,
+      "t_optimal_max": 25.0,
+      "min_streak": 3,
+      "min_wetness_hours_critical": 15.0,
+      "min_wetness_hours_high": 10.0,
+      "pheno_frac_lo": 0.4,
+      "pheno_frac_hi": 0.95,
+      "pheno_fraction_ref_gdd5": 2200.0,
+      "extra": {"two_fifteens_rule": {"temp": 15, "wetness_hours": 15}}
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 90, "hum_hi": 100, "temp_lo": 15, "temp_hi": 25, "rain_min": 5.0, "risk_level": "critical"},
+      {"hum_lo": 80, "hum_hi": 100, "temp_lo": 10, "temp_hi": 28, "rain_min": 2.0, "risk_level": "high"},
+      {"hum_lo": 65, "hum_hi": 90, "temp_lo": 5, "temp_hi": 30, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 65, "temp_lo": 0, "temp_hi": 35, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"two_fifteens_rule": "15C + 15h continuous leaf wetness"}
+  },
+  {
+    "scientific_name": "Hemileia vastatrix",
+    "common_name": "Coffee leaf rust",
+    "threat_type": "fungus",
+    "crop": "coffee",
+    "bio_params": {
+      "t_base": 10.0,
+      "t_lethal_min": 0.0,
+      "t_lethal_max": 35.0,
+      "t_optimal_min": 20.0,
+      "t_optimal_max": 28.0,
+      "min_streak": 5,
+      "min_wetness_hours_critical": 24.0,
+      "min_wetness_hours_high": 18.0,
+      "pheno_frac_lo": 0.15,
+      "pheno_frac_hi": 0.85,
+      "pheno_fraction_ref_gdd5": 2400.0,
+      "extra": {"min_free_water_hours": 24}
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 90, "hum_hi": 100, "temp_lo": 20, "temp_hi": 28, "rain_min": 5.0, "risk_level": "critical"},
+      {"hum_lo": 80, "hum_hi": 100, "temp_lo": 16, "temp_hi": 30, "rain_min": 2.0, "risk_level": "high"},
+      {"hum_lo": 65, "hum_hi": 90, "temp_lo": 12, "temp_hi": 32, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 65, "temp_lo": 0, "temp_hi": 35, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"min_free_water_hours": 24}
+  },
+  {
+    "scientific_name": "Erwinia amylovora",
+    "common_name": "Fire blight",
+    "threat_type": "bacterium",
+    "crop": "pear",
+    "bio_params": {
+      "t_base": 12.7,
+      "t_lethal_min": -5.0,
+      "t_lethal_max": 40.0,
+      "t_optimal_min": 24.0,
+      "t_optimal_max": 29.0,
+      "min_streak": 2,
+      "min_wetness_hours_critical": 12.0,
+      "min_wetness_hours_high": 8.0,
+      "pheno_frac_lo": 0.08,
+      "pheno_frac_hi": 0.35,
+      "pheno_fraction_ref_gdd5": 2200.0,
+      "pheno_bbch_start": "BBCH 57",
+      "pheno_bbch_end": "BBCH 69"
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 85, "hum_hi": 100, "temp_lo": 24, "temp_hi": 29, "rain_min": 2.0, "risk_level": "critical"},
+      {"hum_lo": 75, "hum_hi": 100, "temp_lo": 18, "temp_hi": 33, "rain_min": 0.5, "risk_level": "high"},
+      {"hum_lo": 60, "hum_hi": 85, "temp_lo": 13, "temp_hi": 35, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 60, "temp_lo": 0, "temp_hi": 40, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {"model_reference": "Maryblyt/Cougarblight fire blight risk model"}
+  },
+  {
+    "scientific_name": "Bactrocera oleae",
+    "common_name": "Olive fly",
+    "threat_type": "insect",
+    "crop": "olive",
+    "bio_params": {
+      "t_base": 9.0,
+      "t_lethal_min": -5.0,
+      "t_lethal_max": 42.0,
+      "t_optimal_min": 20.0,
+      "t_optimal_max": 30.0,
+      "min_streak": 2,
+      "min_wetness_hours_critical": 24.0,
+      "min_wetness_hours_high": 24.0,
+      "pheno_frac_lo": 0.3,
+      "pheno_frac_hi": 0.9,
+      "pheno_fraction_ref_gdd5": 2400.0
+    },
+    "fuzzy_rules": [
+      {"hum_lo": 60, "hum_hi": 100, "temp_lo": 20, "temp_hi": 30, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_lo": 50, "hum_hi": 100, "temp_lo": 15, "temp_hi": 33, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_lo": 35, "hum_hi": 100, "temp_lo": 10, "temp_hi": 36, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_lo": 0, "hum_hi": 100, "temp_lo": 0, "temp_hi": 42, "rain_min": 0.0, "risk_level": "low"}
+    ],
+    "special_rules": {}
+  }
+]

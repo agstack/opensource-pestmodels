@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: pnd
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pnd:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      PND_DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/pnd
+      PND_NOAA_API_TOKEN: ${NOAA_API_TOKEN:-}
+      PND_AGSTACK_REGISTRY_TOKEN: ${AGSTACK_REGISTRY_TOKEN:-}
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
