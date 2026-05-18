@@ -58,10 +58,11 @@ GeoID (AgStack Asset Registry) or raw lat/lon as input. REST API + MCP server fo
 
 ## Documentation
 
-- [Executive Summary](docs/executive_summary.md)
-- [Architecture Design](docs/design_architecture.md)
-- [Contributor Guide](docs/contributor_guide.md)
-- [Deployment Guide](docs/deployment_guide.md)
+- [User Manual](docs/user_manual.md) -- How to use the library, API, and MCP server
+- [Executive Summary](docs/executive_summary.md) -- Vision, stakeholders, coverage
+- [Architecture Design](docs/design_architecture.md) -- Technical architecture
+- [Contributor Guide](docs/contributor_guide.md) -- How to add models and providers
+- [Deployment Guide](docs/deployment_guide.md) -- Docker, environment variables
 - [API Reference](https://agstack.github.io/opensource-pestmodels)
 
 ## Contributing
