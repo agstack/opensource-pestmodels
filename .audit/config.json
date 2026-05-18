@@ -1,0 +1,10 @@
+{
+  "project": "agstack-pnd",
+  "version_files": [
+    "pyproject.toml",
+    "src/agstack_pnd/__init__.py"
+  ],
+  "test_command": "pytest tests/ -v",
+  "lint_command": "ruff check src/ tests/",
+  "deploy_targets": ["pypi", "ghcr", "github-pages"]
+}

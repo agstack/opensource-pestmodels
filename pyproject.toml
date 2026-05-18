@@ -1,0 +1,100 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agstack-pnd"
+version = "2.0.0a1"
+description = "Hierarchical pest and disease modeling framework for AgStack (Linux Foundation)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.11"
+authors = [
+    {name = "AgStack Foundation", email = "info@agstack.org"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+keywords = ["agriculture", "pest", "disease", "modeling", "agstack", "gdd", "ipm"]
+dependencies = [
+    "pydantic>=2.0",
+    "numpy>=1.26",
+    "httpx>=0.27",
+    "python-dateutil>=2.9",
+]
+
+[project.optional-dependencies]
+server = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy[asyncio]>=2.0",
+    "asyncpg>=0.30",
+    "alembic>=1.14",
+    "apscheduler>=3.10",
+    "mcp>=1.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=5.0",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "pre-commit>=4.0",
+]
+docs = [
+    "sphinx>=8.0",
+    "sphinx-autodoc-typehints>=2.0",
+    "sphinx-rtd-theme>=3.0",
+    "myst-parser>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/agstack/opensource-pestmodels"
+Documentation = "https://agstack.github.io/opensource-pestmodels"
+Repository = "https://github.com/agstack/opensource-pestmodels"
+Issues = "https://github.com/agstack/opensource-pestmodels/issues"
+
+[project.entry-points."agstack_pnd.models"]
+growing_degree_days = "agstack_pnd.models.weather.growing_degree_days:GrowingDegreeDays"
+chill_hours = "agstack_pnd.models.weather.chill_hours:ChillHoursUtah"
+chill_hours_3245 = "agstack_pnd.models.weather.chill_hours:ChillHours3245"
+chill_portions = "agstack_pnd.models.weather.chill_portions:ChillPortions"
+accumulated_precip = "agstack_pnd.models.weather.accumulated_precip:AccumulatedPrecipitation"
+leaf_wetness_cart = "agstack_pnd.models.agronomic.leaf_wetness_cart:LeafWetnessCART"
+leaf_wetness_rh = "agstack_pnd.models.agronomic.leaf_wetness_rh:LeafWetnessRH"
+vpd = "agstack_pnd.models.agronomic.vpd:VapourPressureDeficit"
+humidity_streak = "agstack_pnd.models.agronomic.humidity_streak:HumidityStreak"
+phenology = "agstack_pnd.models.agronomic.phenology:PhenologicalGating"
+fuzzy_mamdani = "agstack_pnd.models.disease.fuzzy_mamdani:FuzzyMamdaniRisk"
+rule_based = "agstack_pnd.models.disease.rule_based:RuleBasedRisk"
+powdery_mildew_grape = "agstack_pnd.models.disease.powdery_mildew_grape:PowderyMildewGrape"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "SIM", "TCH"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
