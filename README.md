@@ -28,33 +28,104 @@ pip install "agstack-pnd[server]"
 docker compose -f docker/compose.yaml up
 ```
 
-## Usage
+## Three Ways to Use It
+
+### 1. Python Library
 
 ```python
-from agstack_pnd.models.weather.growing_degree_days import GrowingDegreeDays
-from agstack_pnd.foundation.types import WeatherDataFrame
+from agstack_pnd.models.disease.fuzzy_mamdani import FuzzyMamdaniRisk
+from agstack_pnd.catalog.loader import get_threat
 
-model = GrowingDegreeDays()
-result = model.calculate(weather_data, parameters={"base_temp": 10.0})
-print(f"Total GDD: {result.summary['total_gdd']}")  # Cumulative GDD
+threat = get_threat("grape", "Botrytis cinerea")
+model = FuzzyMamdaniRisk()
+result = model.calculate(weather_data, threat=threat)
+
+for score in result.daily_scores:
+    print(f"{score.date}: {score.value:.0f}/100 ({score.risk_level.value})")
 ```
+
+### 2. REST API
+
+```bash
+curl -X POST http://localhost:8000/api/v1/calculate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model_uuid": "a1b2c3d4-0004-4000-8000-000000000001",
+    "latitude": 38.5, "longitude": -121.7,
+    "crop": "grape",
+    "threat_scientific_name": "Botrytis cinerea",
+    "start_date": "2026-04-01",
+    "end_date": "2026-05-01"
+  }'
+```
+
+### 3. MCP Server (AI Agents)
+
+The built-in [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server lets any AI agent -- Claude, GPT, Cursor, or custom LLMs -- discover and query pest/disease models programmatically.
+
+**Start the server:**
+
+```bash
+pip install "agstack-pnd[server]"
+uvicorn agstack_pnd.server.app:create_app --factory --port 8000
+```
+
+**Connect your AI agent** (Claude Desktop, Cursor, or any MCP client):
+
+```json
+{
+  "mcpServers": {
+    "agstack-pnd": {
+      "url": "http://localhost:8000/mcp"
+    }
+  }
+}
+```
+
+**Available MCP tools:**
+
+| Tool | What it does |
+|------|-------------|
+| `list_pest_models` | Discover models by layer or crop |
+| `get_model_info` | Get metadata, parameters, and citations for a model |
+| `get_supported_crops_tool` | List all crops with available models |
+| `get_threats_for_crop_tool` | List pests/diseases for a specific crop |
+| `explain_threat` | Get biological parameters for a crop-threat pairing |
+
+**Example agent conversation:**
+> **User:** "What diseases should I watch for in my grape vineyard this June?"
+>
+> **Agent** calls `get_threats_for_crop_tool("grape")` then `explain_threat("grape", "Uncinula necator")` and responds:
+>
+> "Watch for powdery mildew -- it thrives in warm, dry weather (20-28C). Unusually, free water actually *inhibits* this fungus. Your dry June increases powdery mildew risk while reducing downy mildew risk."
+
+See the full [MCP Server Guide](docs/mcp_server_guide.md) for Claude Desktop config, Cursor config, stdio transport, Python client, and all tool/resource documentation.
 
 ## Architecture
 
 ```
-WeatherProvider (NOAA)  -->  Layer 1 (GDD, Chill)
-                              |
-                              v
-                         Layer 2 (Leaf Wetness, VPD, Phenology)
-                              |
-                              v
-                         Layer 3 (Fuzzy Risk, Rule-Based, Disease Models)
-                              |
-                              v
-                         ModelResult (daily scores, risk levels)
+                    +-----------+     +-----------+     +-------------+
+                    |  Python   |     | REST API  |     | MCP Server  |
+                    |  Library  |     | (FastAPI) |     | (AI Agents) |
+                    +-----+-----+     +-----+-----+     +------+------+
+                          |                 |                    |
+                          v                 v                    v
+                    +----------------------------------------------+
+                    |           agstack_pnd Core Library            |
+                    |                                              |
+                    |  Layer 3: Fuzzy Mamdani | Rule-Based | UCIPM |
+                    |  Layer 2: Leaf Wetness | VPD | Phenology     |
+                    |  Layer 1: GDD | Chill Hours | Precipitation  |
+                    |  Foundation: BaseModel ABC | WeatherProvider |
+                    +----+--------+--------+--------+--------------+
+                         |        |        |        |
+                         v        v        v        v
+                      NOAA    GeoID    Threat    PostgreSQL
+                      API    Registry  Catalog     (cache)
 ```
 
-GeoID (AgStack Asset Registry) or raw lat/lon as input. REST API + MCP server for agents.
+Input: GeoID (AgStack Asset Registry) or raw lat/lon + crop + date range.
+Output: daily risk scores (0-100) with Low / Moderate / High / Critical classification.
 
 ## Documentation
 
