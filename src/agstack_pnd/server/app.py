@@ -1,4 +1,4 @@
-"""FastAPI application factory."""
+"""FastAPI application factory with MCP server integration."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from agstack_pnd.server.routers import calculate, health, models
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-    # TODO: init DB, scheduler, MCP mount
+    # TODO: init DB pool, APScheduler for weather sync
     yield
 
 
@@ -27,4 +27,18 @@ def create_app() -> FastAPI:
     app.include_router(health.router)
     app.include_router(models.router, prefix="/api/v1")
     app.include_router(calculate.router, prefix="/api/v1")
+
+    _mount_mcp(app)
+
     return app
+
+
+def _mount_mcp(app: FastAPI) -> None:
+    """Mount the MCP server on /mcp using Streamable HTTP transport."""
+    try:
+        from agstack_pnd.server.mcp_server import mcp
+
+        mcp_app = mcp.streamable_http_app()
+        app.mount("/mcp", mcp_app)
+    except ImportError:
+        pass

@@ -59,6 +59,7 @@ GeoID (AgStack Asset Registry) or raw lat/lon as input. REST API + MCP server fo
 ## Documentation
 
 - [User Manual](docs/user_manual.md) -- How to use the library, API, and MCP server
+- [MCP Server Guide](docs/mcp_server_guide.md) -- Install and connect AI agents to pest/disease models
 - [Executive Summary](docs/executive_summary.md) -- Vision, stakeholders, coverage
 - [Architecture Design](docs/design_architecture.md) -- Technical architecture
 - [OpenAgri Migration Guide](docs/openagri_migration.md) -- How OpenAgri's work evolves into this framework
