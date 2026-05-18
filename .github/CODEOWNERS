@@ -1,0 +1,36 @@
+# CODEOWNERS -- Defines who must review PRs for each area.
+#
+# OpenAgri maintainers have review authority over the threat catalog,
+# fuzzy risk engine, and biological parameters they created.
+# AgStack core maintainers review foundation, infrastructure, and CI/CD.
+#
+# GitHub requires at least one approving review from a CODEOWNER
+# before a PR can be merged (when branch protection is enabled).
+
+# --- Overall project ---
+*                                           @agstack/pnd-maintainers
+
+# --- Threat catalog and biological parameters (OpenAgri domain) ---
+src/agstack_pnd/catalog/                    @agstack/openagri-maintainers
+src/agstack_pnd/catalog/data/               @agstack/openagri-maintainers
+
+# --- Disease/pest risk models (OpenAgri domain) ---
+src/agstack_pnd/models/disease/             @agstack/openagri-maintainers @agstack/pnd-maintainers
+
+# --- Fuzzy risk engine (OpenAgri core contribution) ---
+src/agstack_pnd/models/disease/fuzzy_mamdani.py   @agstack/openagri-maintainers
+
+# --- Agronomic models derived from OpenAgri research ---
+src/agstack_pnd/models/agronomic/           @agstack/openagri-maintainers @agstack/pnd-maintainers
+
+# --- Foundation and infrastructure (AgStack core) ---
+src/agstack_pnd/foundation/                @agstack/pnd-maintainers
+src/agstack_pnd/server/                    @agstack/pnd-maintainers
+src/agstack_pnd/providers/                 @agstack/pnd-maintainers
+
+# --- CI/CD and quality harness ---
+.github/                                    @agstack/pnd-maintainers
+.audit/                                     @agstack/pnd-maintainers
+
+# --- Documentation ---
+docs/                                       @agstack/pnd-maintainers @agstack/openagri-maintainers

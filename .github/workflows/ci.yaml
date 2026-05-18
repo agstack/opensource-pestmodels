@@ -2,12 +2,18 @@ name: CI
 
 on:
   push:
-    branches: [main, v2]
+    branches: [main, master, v2]
   pull_request:
-    branches: [main]
+    branches: [main, master]
+
+# Every PR must pass ALL four gates before merge is allowed.
+# Repository Settings > Branches > Branch protection rules should require:
+#   - "lint", "typecheck", "test", "catalog-validation" to pass
+#   - At least 1 approving review (from CODEOWNERS / maintainers)
 
 jobs:
   lint:
+    name: "Gate 1: Lint & Format"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,6 +25,7 @@ jobs:
       - run: ruff format --check src/ tests/
 
   typecheck:
+    name: "Gate 2: Type Check"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +36,7 @@ jobs:
       - run: mypy src/agstack_pnd/ --ignore-missing-imports
 
   test:
+    name: "Gate 3: Tests"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,9 +44,32 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -e ".[dev]"
-      - run: pytest tests/ -v --tb=short
+      - run: pytest tests/ -v --tb=short --strict-markers
+
+  catalog-validation:
+    name: "Gate 4: Catalog & FATFD Integrity"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e ".[dev]"
+      - name: Validate threat catalog schema
+        run: python -c "from agstack_pnd.catalog.loader import list_threats; t = list_threats(); print(f'Catalog OK: {len(t)} threats loaded')"
+      - name: Validate model UUID uniqueness
+        run: python -c "
+          from agstack_pnd.foundation.model_registry import ModelRegistry
+          r = ModelRegistry(); r._discover()
+          uuids = [str(c.metadata.uuid) for c in r._models.values()]
+          assert len(uuids) == len(set(uuids)), 'Duplicate UUIDs found'
+          print(f'Registry OK: {len(uuids)} unique models')
+          "
+      - name: Run FATFD validator
+        run: python .audit/validate_fatfd.py
 
   docs:
+    name: "Docs Build"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
