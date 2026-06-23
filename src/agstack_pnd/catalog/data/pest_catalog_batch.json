@@ -1,0 +1,736 @@
+[
+  {
+    "scientific_name": "Monosteira unicostata",
+    "common_name": "Almond false tiger",
+    "threat_type": "insect",
+    "crop": "almond",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 42.0, "t_lethal_min": 5.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.091, "t_optimal_max": 35.0, "t_optimal_min": 28.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 40.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 28.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Myzus persicae",
+    "common_name": "Green peach aphid",
+    "threat_type": "insect",
+    "crop": "almond",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1200, "pheno_lo": 80, "min_streak": 1, "t_lethal_max": 35.0, "t_lethal_min": -2.0, "pheno_frac_hi": 0.545, "pheno_frac_lo": 0.036, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 20.0, "temp_lo": 5.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 5.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Capnodis tenebrionis",
+    "common_name": "Flat-headed rootborer",
+    "threat_type": "insect",
+    "crop": "almond",
+    "bio_params": {"t_base": 15.0, "pheno_hi": 1400, "pheno_lo": 300, "min_streak": 1, "t_lethal_max": 42.0, "t_lethal_min": 0.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.136, "t_optimal_max": 35.0, "t_optimal_min": 25.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 50.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 50.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 50.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 33.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Venturia inaequalis",
+    "common_name": "Apple scab",
+    "threat_type": "fungus",
+    "crop": "apple",
+    "bio_params": {"t_base": 0.0, "pheno_hi": 800, "pheno_lo": 50, "min_streak": 2, "t_lethal_max": 33.0, "pheno_frac_hi": 0.364, "pheno_frac_lo": 0.023, "t_optimal_max": 24.0, "t_optimal_min": 18.0, "pheno_fraction_ref_gdd5": 2200, "min_wetness_hours_high": 9, "min_wetness_hours_critical": 6},
+    "fuzzy_rules": [
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 26.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 10.0, "temp_lo": 5.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 5.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 24.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Cydia pomonella",
+    "common_name": "Cydia pomonella",
+    "threat_type": "insect",
+    "crop": "apple",
+    "bio_params": {"t_base": 5.0},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 20.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 25.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Anarsia lineatella",
+    "common_name": "Peach twig borer",
+    "threat_type": "insect",
+    "crop": "apricot",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1200, "pheno_lo": 100, "min_streak": 1, "t_lethal_max": 38.0, "t_lethal_min": -5.0, "pheno_frac_hi": 0.545, "pheno_frac_lo": 0.045, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Drosophila suzukii",
+    "common_name": "Spotted wing drosophila",
+    "threat_type": "insect",
+    "crop": "apricot",
+    "bio_params": {"t_base": 4.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 32.0, "t_lethal_min": 2.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.091, "t_optimal_max": 28.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 25.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 16.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 85.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Monilia spp",
+    "common_name": "Brown rot",
+    "threat_type": "fungus",
+    "crop": "apricot",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1400, "pheno_lo": 100, "min_streak": 2, "t_lethal_max": 35.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.045, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200, "min_wetness_hours_high": 5, "min_wetness_hours_critical": 12},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Colletotrichum gloeosporioides",
+    "common_name": "Avocado anthracnose",
+    "threat_type": "fungus",
+    "crop": "avocado",
+    "bio_params": {"t_base": 12.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "t_lethal_max": 40.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 30.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 32.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 35.0, "temp_lo": 32.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 20.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 16.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Oligonychus perseae",
+    "common_name": "Persea mite",
+    "threat_type": "mite",
+    "crop": "avocado",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 1, "t_lethal_max": 40.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 35.0, "t_optimal_min": 28.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 60.0, "hum_lo": 50.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 60.0, "hum_lo": 50.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 50.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 40.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Pseudacysta perseae",
+    "common_name": "Avocado lace bug",
+    "threat_type": "insect",
+    "crop": "avocado",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1800, "pheno_lo": 100, "min_streak": 1, "pheno_frac_hi": 0.75, "pheno_frac_lo": 0.042, "t_optimal_max": 35.0, "t_optimal_min": 25.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 65.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 65.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 65.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Pseudocercospora fijiensis",
+    "common_name": "Black Sigatoka",
+    "threat_type": "fungus",
+    "crop": "banana",
+    "bio_params": {"t_base": 13.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 3, "t_lethal_max": 35.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 28.0, "t_optimal_min": 25.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 28.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 20.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 28.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Drosophila suzukii",
+    "common_name": "Spotted wing drosophila",
+    "threat_type": "insect",
+    "crop": "cherry",
+    "bio_params": {"t_base": 4.0, "pheno_hi": 900, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 32.0, "t_lethal_min": 2.0, "pheno_frac_hi": 0.409, "pheno_frac_lo": 0.091, "t_optimal_max": 28.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 25.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 16.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 85.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Monilia spp",
+    "common_name": "Brown rot",
+    "threat_type": "fungus",
+    "crop": "cherry",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 900, "pheno_lo": 100, "min_streak": 2, "t_lethal_max": 35.0, "pheno_frac_hi": 0.409, "pheno_frac_lo": 0.045, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200, "min_wetness_hours_critical": 12},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 1.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 15.0, "temp_lo": 10.0, "rain_min": 1.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 1.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 1.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 1.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Rhagoletis cerasi",
+    "common_name": "Cherry fruit fly",
+    "threat_type": "insect",
+    "crop": "cherry",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 800, "pheno_lo": 430, "min_streak": 1, "pheno_frac_hi": 0.364, "pheno_frac_lo": 0.195, "t_optimal_max": 25.0, "t_optimal_min": 18.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 25.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 18.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 22.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Aphis spiraecola",
+    "common_name": "Green citrus aphid",
+    "threat_type": "insect",
+    "crop": "citrus",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1400, "pheno_lo": 50, "min_streak": 1, "pheno_frac_hi": 0.583, "pheno_frac_lo": 0.021, "t_optimal_max": 28.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 20.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Ceratitis capitata",
+    "common_name": "Mediterranean fruit fly",
+    "threat_type": "insect",
+    "crop": "citrus",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1600, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 32.0, "t_lethal_min": 5.0, "pheno_frac_hi": 0.667, "pheno_frac_lo": 0.083, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 75.0, "hum_lo": 50.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Eutetranychus orientalis",
+    "common_name": "Oriental mite",
+    "threat_type": "mite",
+    "crop": "citrus",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 1, "pheno_frac_hi": 0.583, "pheno_frac_lo": 0.083, "t_optimal_max": 35.0, "t_optimal_min": 28.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 60.0, "hum_lo": 55.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 55.0, "hum_lo": 50.0, "temp_hi": 28.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 24.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 45.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Panonychus citri",
+    "common_name": "Citrus red mite",
+    "threat_type": "mite",
+    "crop": "citrus",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1400, "pheno_lo": 100, "min_streak": 1, "t_lethal_max": 40.0, "pheno_frac_hi": 0.583, "pheno_frac_lo": 0.042, "t_optimal_max": 35.0, "t_optimal_min": 27.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 60.0, "hum_lo": 10.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 60.0, "hum_lo": 10.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 10.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 75.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 75.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 27.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Moniliophthora roreri",
+    "common_name": "Frosty pod rot",
+    "threat_type": "fungus",
+    "crop": "cocoa",
+    "bio_params": {"t_base": 15.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 3, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 26.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 5.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Phytophthora palmivora and P. megakarya",
+    "common_name": "Black pod disease",
+    "threat_type": "oomycete",
+    "crop": "cocoa",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "t_lethal_max": 35.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 30.0, "t_optimal_min": 25.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 999.0, "temp_lo": -999.0, "rain_min": 40.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 999.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": -999.0, "rain_min": 20.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 10.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Colletotrichum kahawae",
+    "common_name": "Coffee berry disease",
+    "threat_type": "fungus",
+    "crop": "coffee",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 28.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 24.0, "temp_lo": 18.0, "rain_min": 5.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 2.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 18.0, "temp_lo": 15.0, "rain_min": 2.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 28.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Hemileia vastatrix",
+    "common_name": "Coffee leaf rust",
+    "threat_type": "fungus",
+    "crop": "coffee",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "t_lethal_max": 31.0, "t_lethal_min": 13.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 25.0, "t_optimal_min": 21.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 35.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 98.0, "temp_hi": 25.0, "temp_lo": 21.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Guignardia bidwelli",
+    "common_name": "Guignardia bidwelli",
+    "threat_type": "fungus",
+    "crop": "grape",
+    "bio_params": {},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": 5.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 0.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 0.0, "temp_hi": 5.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 90.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Phomopsis viticola",
+    "common_name": "Phomopsis viticola",
+    "threat_type": "fungus",
+    "crop": "grape",
+    "bio_params": {},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 5.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 15.0, "temp_lo": 5.0, "rain_min": 2.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 2.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 5.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 5.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Bactrocera dorsalis and B. zonata",
+    "common_name": "Guava fruit fly",
+    "threat_type": "insect",
+    "crop": "guava",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 40.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.083, "t_optimal_max": 32.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 65.0, "hum_lo": 40.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 75.0, "hum_lo": 60.0, "temp_hi": 40.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 75.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 75.0, "temp_hi": 18.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 32.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Colletotrichum gloeosporioides",
+    "common_name": "Guava anthracnose",
+    "threat_type": "fungus",
+    "crop": "guava",
+    "bio_params": {"t_base": 12.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 30.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 32.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 35.0, "temp_lo": 32.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 20.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 16.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Bactrocera dorsalis and B. zonata",
+    "common_name": "Mango fruit fly",
+    "threat_type": "insect",
+    "crop": "mango",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 300, "min_streak": 1, "t_lethal_max": 40.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.125, "t_optimal_max": 32.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 65.0, "hum_lo": 40.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 75.0, "hum_lo": 60.0, "temp_hi": 40.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 75.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 75.0, "temp_hi": 18.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 32.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Colletotrichum gloeosporioides",
+    "common_name": "Mango anthracnose",
+    "threat_type": "fungus",
+    "crop": "mango",
+    "bio_params": {"t_base": 12.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "t_lethal_max": 40.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 30.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 32.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 35.0, "temp_lo": 32.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 20.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 16.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Oidium mangiferae",
+    "common_name": "Mango powdery mildew",
+    "threat_type": "fungus",
+    "crop": "mango",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "t_lethal_max": 35.0, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 85.0, "hum_lo": 70.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Ceratitis capitata",
+    "common_name": "Mediterranean fruit fly",
+    "threat_type": "insect",
+    "crop": "nectarine",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1600, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 32.0, "pheno_frac_hi": 0.667, "pheno_frac_lo": 0.083, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 75.0, "hum_lo": 50.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Drosophila suzukii",
+    "common_name": "Spotted wing drosophila",
+    "threat_type": "insect",
+    "crop": "nectarine",
+    "bio_params": {"t_base": 4.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 32.0, "t_lethal_min": 2.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.091, "t_optimal_max": 28.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 25.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 16.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 85.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Monilia spp",
+    "common_name": "Brown rot",
+    "threat_type": "fungus",
+    "crop": "nectarine",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1400, "pheno_lo": 100, "min_streak": 2, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.045, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200, "min_wetness_hours_critical": 12},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Myzus persicae",
+    "common_name": "Green peach aphid",
+    "threat_type": "insect",
+    "crop": "nectarine",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1200, "pheno_lo": 80, "min_streak": 1, "pheno_frac_hi": 0.545, "pheno_frac_lo": 0.036, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 20.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Taphrina deformans",
+    "common_name": "Taphrina deformans",
+    "threat_type": "fungus",
+    "crop": "nectarine",
+    "bio_params": {},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 17.0, "temp_lo": -999.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 20.0, "temp_lo": 17.0, "rain_min": 3.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 20.0, "rain_min": 12.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 16.0, "temp_lo": 10.0, "rain_min": 3.0, "risk_level": "critical"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 16.0, "temp_lo": 3.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 19.0, "temp_lo": 16.0, "rain_min": 3.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 3.0, "temp_lo": 0.0, "rain_min": 3.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 19.0, "rain_min": 3.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 0.0, "temp_lo": -999.0, "rain_min": 3.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Bactrocera oleae",
+    "common_name": "Olive fly",
+    "threat_type": "insect",
+    "crop": "olive",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1600, "pheno_lo": 400, "min_streak": 1, "t_lethal_max": 35.0, "t_lethal_min": 5.0, "pheno_frac_hi": 0.727, "pheno_frac_lo": 0.182, "t_optimal_max": 27.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 26.0, "temp_lo": 20.0, "rain_min": 10.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 20.0, "temp_lo": 16.0, "rain_min": 10.0, "risk_level": "moderate"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 16.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 95.0, "hum_lo": 80.0, "temp_hi": 27.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Colletotrichum gloeosporioides",
+    "common_name": "Olive anthracnose",
+    "threat_type": "fungus",
+    "crop": "olive",
+    "bio_params": {"t_base": 12.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 2, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.091, "t_optimal_max": 30.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 22.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 16.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Prays oleae",
+    "common_name": "Olive moth",
+    "threat_type": "insect",
+    "crop": "olive",
+    "bio_params": {"t_base": 9.0, "pheno_hi": 1600, "pheno_lo": 100, "min_streak": 1, "pheno_frac_hi": 0.727, "pheno_frac_lo": 0.045, "t_optimal_max": 30.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 50.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 30.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Pseudomonas savastanoi",
+    "common_name": "Olive knot",
+    "threat_type": "bacterium",
+    "crop": "olive",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 600, "pheno_lo": 50, "min_streak": 1, "pheno_frac_hi": 0.273, "pheno_frac_lo": 0.023, "t_optimal_max": 22.0, "t_optimal_min": 15.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 22.0, "rain_min": 5.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 22.0, "temp_lo": 5.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 35.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 5.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 60.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 22.0, "temp_lo": 15.0, "rain_min": 5.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Venturia oleaginea",
+    "common_name": "Olive leaf spot (Spilocea oleagina)",
+    "threat_type": "fungus",
+    "crop": "olive",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1200, "pheno_lo": 50, "min_streak": 2, "pheno_frac_hi": 0.545, "pheno_frac_lo": 0.023, "t_optimal_max": 20.0, "t_optimal_min": 15.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 28.0, "temp_lo": 8.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 90.0, "hum_lo": 0.0, "temp_hi": 8.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Colletotrichum gloeosporioides",
+    "common_name": "Papaya anthracnose",
+    "threat_type": "fungus",
+    "crop": "papaya",
+    "bio_params": {"t_base": 12.0, "pheno_hi": 9999, "pheno_lo": 0, "min_streak": 2, "pheno_frac_hi": 1.0, "pheno_frac_lo": 0.0, "t_optimal_max": 30.0, "t_optimal_min": 24.0, "pheno_fraction_ref_gdd5": 2400},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 95.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 32.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 35.0, "temp_lo": 32.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 90.0, "hum_lo": 80.0, "temp_hi": 20.0, "temp_lo": 16.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 80.0, "hum_lo": 0.0, "temp_hi": 16.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"}
+    ]
+  },
+  {
+    "scientific_name": "Cydia pomonella",
+    "common_name": "Codling moth",
+    "threat_type": "insect",
+    "crop": "pear",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1600, "pheno_lo": 200, "min_streak": 1, "pheno_frac_hi": 0.727, "pheno_frac_lo": 0.091, "t_optimal_max": 25.0, "t_optimal_min": 18.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 70.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 20.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 25.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Erwinia amylovora",
+    "common_name": "Fire blight",
+    "threat_type": "bacterium",
+    "crop": "pear",
+    "bio_params": {"t_base": 18.0, "pheno_hi": 700, "pheno_lo": 100, "min_streak": 1, "t_lethal_max": 37.0, "pheno_frac_hi": 0.318, "pheno_frac_lo": 0.045, "t_optimal_max": 27.0, "t_optimal_min": 21.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 27.0, "temp_lo": 18.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 90.0, "hum_lo": 70.0, "temp_hi": 18.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 27.0, "temp_lo": 21.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Agonoscena pistaciae",
+    "common_name": "Pistachio psylla",
+    "threat_type": "insect",
+    "crop": "pistachio",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1400, "pheno_lo": 100, "min_streak": 1, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.045, "t_optimal_max": 30.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 30.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Alternaria alternata",
+    "common_name": "Alternaria late blight",
+    "threat_type": "fungus",
+    "crop": "pistachio",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 2, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.091, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 27.0, "temp_lo": 23.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 23.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 27.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 18.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 85.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Anarsia lineatella",
+    "common_name": "Peach twig borer",
+    "threat_type": "insect",
+    "crop": "peach",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1200, "pheno_lo": 100, "min_streak": 1, "pheno_frac_hi": 0.545, "pheno_frac_lo": 0.045, "t_optimal_max": 28.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 30.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 8.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 40.0, "temp_hi": 28.0, "temp_lo": 22.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Grapholita molesta",
+    "common_name": "Oriental fruit moth",
+    "threat_type": "insect",
+    "crop": "peach",
+    "bio_params": {"t_base": 10.0, "pheno_hi": 1400, "pheno_lo": 150, "min_streak": 1, "t_lethal_max": 37.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.068, "t_optimal_max": 25.0, "t_optimal_min": 18.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 28.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 70.0, "temp_hi": 30.0, "temp_lo": 28.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 25.0, "temp_lo": 18.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Monilia spp",
+    "common_name": "Brown rot",
+    "threat_type": "fungus",
+    "crop": "peach",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1400, "pheno_lo": 100, "min_streak": 2, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.045, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Halyomorpha halys",
+    "common_name": "Brown marmorated stink bug",
+    "threat_type": "insect",
+    "crop": "plum",
+    "bio_params": {"t_base": 14.0, "pheno_hi": 1400, "pheno_lo": 200, "min_streak": 1, "t_lethal_max": 38.0, "pheno_frac_hi": 0.636, "pheno_frac_lo": 0.091, "t_optimal_max": 30.0, "t_optimal_min": 22.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 30.0, "temp_lo": 20.0, "rain_min": 0.0, "risk_level": "high"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 20.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 35.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 15.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 35.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 70.0, "hum_lo": 50.0, "temp_hi": 30.0, "temp_lo": 24.0, "rain_min": 0.0, "risk_level": "critical"}
+    ]
+  },
+  {
+    "scientific_name": "Monilia spp",
+    "common_name": "Brown rot",
+    "threat_type": "fungus",
+    "crop": "plum",
+    "bio_params": {"t_base": 5.0, "pheno_hi": 1200, "pheno_lo": 100, "min_streak": 2, "pheno_frac_hi": 0.545, "pheno_frac_lo": 0.045, "t_optimal_max": 25.0, "t_optimal_min": 20.0, "pheno_fraction_ref_gdd5": 2200},
+    "fuzzy_rules": [
+      {"hum_hi": 100.0, "hum_lo": 80.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 3.0, "risk_level": "high"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 25.0, "temp_lo": 15.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 15.0, "temp_lo": 10.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 80.0, "hum_lo": 60.0, "temp_hi": 30.0, "temp_lo": 25.0, "rain_min": 0.0, "risk_level": "moderate"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 10.0, "temp_lo": -999.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 60.0, "hum_lo": 0.0, "temp_hi": 999.0, "temp_lo": 30.0, "rain_min": 0.0, "risk_level": "low"},
+      {"hum_hi": 100.0, "hum_lo": 90.0, "temp_hi": 25.0, "temp_lo": 20.0, "rain_min": 3.0, "risk_level": "critical"}
+    ]
+  }
+]
