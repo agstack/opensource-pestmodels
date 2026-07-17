@@ -1,0 +1,38 @@
+# Template package for publishing a pest/disease model to agstack-pnd.
+#
+# The whole point: you ship an ordinary pip wheel. The `[project.entry-points."agstack_pnd.models"]`
+# table below is how agstack-pnd's registry auto-discovers your model at runtime --
+# no fork, no PR to the core repo required.
+#
+#   pip install -e .          # installs your model + registers the entry point
+#   python -c "from agstack_pnd.foundation.model_registry import ModelRegistry as R; \
+#              print([m.name for m in R().list_models()])"   # your model shows up
+#
+# Rename `my_pnd_model` and the entry-point key to something unique before publishing.
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-pnd-model"
+version = "0.1.0"
+description = "Example third-party pest/disease model for agstack-pnd"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.11"
+authors = [{name = "Your Lab", email = "you@university.edu"}]
+dependencies = [
+    "agstack-pnd>=2.0.0a1",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+# THIS is the integration point. Key = a unique model slug; value = "module:Class".
+[project.entry-points."agstack_pnd.models"]
+heat_stress_index = "my_pnd_model.heat_stress:HeatStressIndex"
+
+[tool.setuptools.packages.find]
+where = ["src"]

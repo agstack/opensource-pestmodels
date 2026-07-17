@@ -8,7 +8,7 @@ from typing import AsyncIterator
 from fastapi import FastAPI
 
 from agstack_pnd import __version__
-from agstack_pnd.server.routers import calculate, health, models
+from agstack_pnd.server.routers import aggregate, calculate, health, models
 
 
 @asynccontextmanager
@@ -27,6 +27,7 @@ def create_app() -> FastAPI:
     app.include_router(health.router)
     app.include_router(models.router, prefix="/api/v1")
     app.include_router(calculate.router, prefix="/api/v1")
+    app.include_router(aggregate.router, prefix="/api/v1")
 
     _mount_mcp(app)
 

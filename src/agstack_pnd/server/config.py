@@ -15,5 +15,14 @@ class Settings(BaseSettings):
     cors_origins: list[str] = ["*"]
     debug: bool = False
 
+    # Weather source: "dpi" reads weather BITEs from Pancake; "noaa" uses NOAA CDO.
+    weather_provider: str = "noaa"
+    # Pancake grants/BITE service base URL (DPI data plane).
+    pancake_url: str = "http://localhost:8100"
+    # Optional hub bearer token for authenticating to Pancake /bites in dev.
+    pancake_token: str = ""
+    # When set, agstack-pnd publishes PEST_DISEASE risk BITEs back to Pancake.
+    publish_risk_bites: bool = False
+
 
 settings = Settings()

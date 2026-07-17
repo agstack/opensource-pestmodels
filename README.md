@@ -101,6 +101,24 @@ uvicorn agstack_pnd.server.app:create_app --factory --port 8000
 
 See the full [MCP Server Guide](docs/mcp_server_guide.md) for Claude Desktop config, Cursor config, stdio transport, Python client, and all tool/resource documentation.
 
+## Run it as part of the DPI
+
+agstack-pnd can run as a first-class Digital Public Infrastructure service:
+register a field to get a **GeoID**, let weather flow in from TerraPipe as
+governed **BITEs**, run a forecast off those BITEs, and publish the risk back as
+a BITE that others can join on the GeoID.
+
+- Set `PND_WEATHER_PROVIDER=dpi` (or pass `"weather_provider": "dpi"` per request)
+  to read weather BITEs from Pancake instead of calling a weather API directly.
+- Pass an AR2 `field_grant` to authorize L1 geometry and grant-gated weather.
+- Pass `"publish": true` to persist the result as a `pest_disease` BITE, and use
+  `POST /api/v1/aggregate` for distinct-field, district-level roll-ups.
+
+A one-command, local, reproducible walkthrough (docker-compose + an executable
+notebook) lives in the [`dpi-demo/`](https://github.com/agstack/pancake/tree/main/dpi-demo)
+directory of the Pancake repo. See [OpenScience DPI Fit](docs/openscience_dpi_fit.md)
+for the design and [Publishing a Model](docs/publishing_a_model.md) to ship your own.
+
 ## Architecture
 
 ```
@@ -133,6 +151,8 @@ Output: daily risk scores (0-100) with Low / Moderate / High / Critical classifi
 - [MCP Server Guide](docs/mcp_server_guide.md) -- Install and connect AI agents to pest/disease models
 - [Executive Summary](docs/executive_summary.md) -- Vision, stakeholders, coverage
 - [Architecture Design](docs/design_architecture.md) -- Technical architecture
+- [OpenScience DPI Fit](docs/openscience_dpi_fit.md) -- How agstack-pnd fits the AgStack DPI as a GeoID-addressable OpenScience service
+- [Publishing a Model](docs/publishing_a_model.md) -- Ship your pest/disease model as a pip wheel that the runtime auto-discovers (see [`examples/model-template/`](examples/model-template/))
 - [OpenAgri Migration Guide](docs/openagri_migration.md) -- How OpenAgri's work evolves into this framework
 - [Contributor Guide](docs/contributor_guide.md) -- How to add models and providers
 - [Deployment Guide](docs/deployment_guide.md) -- Docker, environment variables

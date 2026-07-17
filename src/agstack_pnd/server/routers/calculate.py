@@ -8,16 +8,9 @@ from uuid import UUID
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from agstack_pnd.catalog.loader import get_threat
-from agstack_pnd.foundation.exceptions import PNDError
-from agstack_pnd.foundation.geo_resolver import GeoResolver
-from agstack_pnd.foundation.model_registry import ModelRegistry
-from agstack_pnd.foundation.types import ModelResult
-from agstack_pnd.providers.noaa import NOAAProvider
-from agstack_pnd.server.config import settings
+from agstack_pnd.server.pipeline import CalculationError, CalculationInput, run_calculation
 
 router = APIRouter(tags=["calculate"])
-_registry = ModelRegistry()
 
 
 class CalculateRequest(BaseModel):
@@ -30,60 +23,30 @@ class CalculateRequest(BaseModel):
     start_date: date
     end_date: date
     parameters: dict | None = None
+    # Optional AR2 field grant (SD-JWT VC); forwarded to the registry + Pancake.
+    field_grant: str | None = None
+    # Per-request weather provider override ("dpi" | "noaa"); defaults to config.
+    weather_provider: str | None = None
 
 
 @router.post("/calculate")
 async def calculate(req: CalculateRequest) -> dict:
-    # Resolve location
-    if req.geo_id:
-        resolver = GeoResolver(token=settings.agstack_registry_token or None)
-        try:
-            location = await resolver.resolve(req.geo_id)
-        except PNDError as e:
-            raise HTTPException(status_code=400, detail=str(e))
-    elif req.latitude is not None and req.longitude is not None:
-        location = GeoResolver.from_coordinates(req.latitude, req.longitude)
-    else:
-        raise HTTPException(status_code=400, detail="Provide geo_id or latitude+longitude")
-
-    # Get model
+    inp = CalculationInput(
+        model_uuid=req.model_uuid,
+        start_date=req.start_date,
+        end_date=req.end_date,
+        geo_id=req.geo_id,
+        latitude=req.latitude,
+        longitude=req.longitude,
+        crop=req.crop,
+        threat_scientific_name=req.threat_scientific_name,
+        parameters=req.parameters,
+        field_grant=req.field_grant,
+        weather_provider=req.weather_provider,
+    )
     try:
-        model = _registry.get_model(req.model_uuid)
-    except PNDError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-
-    # Get threat definition if this is a disease model
-    threat = None
-    if req.crop and req.threat_scientific_name:
-        try:
-            threat = get_threat(req.crop, req.threat_scientific_name)
-        except PNDError as e:
-            raise HTTPException(status_code=404, detail=str(e))
-
-    # Fetch weather
-    if not settings.noaa_api_token:
-        raise HTTPException(status_code=503, detail="NOAA API token not configured")
-
-    provider = NOAAProvider(settings.noaa_api_token)
-    try:
-        weather_data = await provider.get_hourly_data(
-            location.latitude,
-            location.longitude,
-            req.start_date,
-            req.end_date,
-            model.required_fields(),
-        )
-    except PNDError as e:
-        raise HTTPException(status_code=502, detail=f"Weather data error: {e}")
-
-    # Run model
-    try:
-        result: ModelResult = model.calculate(
-            weather_data,
-            parameters=req.parameters,
-            threat=threat,
-        )
-    except PNDError as e:
-        raise HTTPException(status_code=422, detail=f"Model error: {e}")
+        result = await run_calculation(inp)
+    except CalculationError as e:
+        raise HTTPException(status_code=e.status, detail=e.detail) from e
 
     return result.model_dump(mode="json")
