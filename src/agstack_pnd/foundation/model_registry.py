@@ -6,10 +6,11 @@ import importlib.metadata
 from typing import TYPE_CHECKING
 from uuid import UUID
 
-from agstack_pnd.foundation.exceptions import ModelNotFound
+from agstack_pnd.foundation.exceptions import EngineTypeNotFound, ModelNotFound
 
 if TYPE_CHECKING:
     from agstack_pnd.foundation.base_model import PestModelBase
+    from agstack_pnd.foundation.engine_params import EngineParamsBase
     from agstack_pnd.foundation.types import ModelLayer, ModelMetadata
 
 ENTRY_POINT_GROUP = "agstack_pnd.models"
@@ -29,6 +30,7 @@ class ModelRegistry:
 
     def __init__(self) -> None:
         self._models: dict[UUID, type[PestModelBase]] = {}
+        self._engine_param_schemas: dict[str, type[EngineParamsBase]] = {}
         self._discovered = False
 
     def _discover(self) -> None:
@@ -44,14 +46,24 @@ class ModelRegistry:
                 cls = ep.load()
                 if hasattr(cls, "metadata") and hasattr(cls.metadata, "uuid"):
                     self._models[cls.metadata.uuid] = cls
+                    self._index_engine_params_schema(cls)
             except Exception:  # noqa: BLE001
                 continue
 
         self._discovered = True
 
+    def _index_engine_params_schema(self, model_cls: type[PestModelBase]) -> None:
+        schema = getattr(model_cls, "engine_params_schema", None)
+        if schema is None:
+            return
+        # engine_type is a Literal default on the schema, e.g. "fuzzy_mamdani"
+        engine_type = schema.model_fields["engine_type"].default
+        self._engine_param_schemas[engine_type] = schema
+
     def register(self, model_cls: type[PestModelBase]) -> None:
         """Manually register a model class."""
         self._models[model_cls.metadata.uuid] = model_cls
+        self._index_engine_params_schema(model_cls)
 
     def list_models(
         self,
@@ -89,3 +101,14 @@ class ModelRegistry:
             if cls.metadata.name == name:
                 return cls()
         raise ModelNotFound(name)
+
+    def get_engine_params_schema(self, engine_type: str) -> type[EngineParamsBase]:
+        """Return the typed params schema declared by any model for this engine_type.
+
+        A third-party model registers a new engine_type simply by shipping a
+        model class with an ``engine_params_schema`` ClassVar -- no core PR.
+        """
+        self._discover()
+        if engine_type not in self._engine_param_schemas:
+            raise EngineTypeNotFound(engine_type)
+        return self._engine_param_schemas[engine_type]

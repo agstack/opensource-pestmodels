@@ -5,6 +5,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import ClassVar
 
+from agstack_pnd.foundation.engine_params import EngineParamsBase
 from agstack_pnd.foundation.types import (
     ModelMetadata,
     ModelResult,
@@ -21,6 +22,9 @@ class PestModelBase(ABC):
     """
 
     metadata: ClassVar[ModelMetadata]
+    # Opt-in: models that accept typed engine params declare their schema here,
+    # keyed for lookup by ModelRegistry.get_engine_params_schema(engine_type).
+    engine_params_schema: ClassVar[type[EngineParamsBase] | None] = None
 
     @abstractmethod
     def calculate(
