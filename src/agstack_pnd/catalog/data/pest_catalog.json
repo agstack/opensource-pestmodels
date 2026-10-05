@@ -87,6 +87,7 @@
     "common_name": "Powdery mildew",
     "threat_type": "fungus",
     "crop": "grape",
+    "engine_type": "powdery_mildew_grape",
     "bio_params": {
       "t_base": 6.0,
       "t_lethal_min": -3.0,
@@ -100,6 +101,23 @@
       "pheno_frac_hi": 0.8,
       "pheno_fraction_ref_gdd5": 2200.0,
       "extra": {"wetness_effect": "INHIBITORY"}
+    },
+    "engine_params": {
+      "ascospore_temp_break_1_f": 50.0,
+      "ascospore_temp_break_2_f": 60.0,
+      "ascospore_temp_break_3_f": 70.0,
+      "ascospore_temp_break_4_f": 80.0,
+      "ascospore_wetness_hours_1": 6.0,
+      "ascospore_wetness_hours_2": 4.0,
+      "ascospore_wetness_hours_3": 3.0,
+      "conidial_favorable_temp_min_f": 70.0,
+      "conidial_favorable_temp_max_f": 85.0,
+      "conidial_heat_penalty_temp_f": 95.0,
+      "conidial_index_gain": 20.0,
+      "conidial_index_decay": 10.0,
+      "conidial_index_heat_penalty": 10.0,
+      "risk_high_threshold": 60.0,
+      "risk_moderate_threshold": 30.0
     },
     "fuzzy_rules": [
       {"hum_lo": 40, "hum_hi": 85, "temp_lo": 20, "temp_hi": 28, "rain_min": 0.0, "risk_level": "critical"},
@@ -216,5 +234,30 @@
       {"hum_lo": 0, "hum_hi": 100, "temp_lo": 0, "temp_hi": 42, "rain_min": 0.0, "risk_level": "low"}
     ],
     "special_rules": {}
+  },
+  {
+    "scientific_name": "Venturia pirina",
+    "common_name": "Pear scab",
+    "threat_type": "fungus",
+    "crop": "pear",
+    "engine_type": "fuzzy_mamdani",
+    "bio_params": {
+      "t_base": 0.0,
+      "t_lethal_min": -5.0,
+      "t_lethal_max": 40.0,
+      "t_optimal_min": 14.0,
+      "t_optimal_max": 23.0,
+      "min_streak": 3,
+      "min_wetness_hours_critical": 18.0,
+      "min_wetness_hours_high": 12.0
+    },
+    "engine_params": {
+      "fuzzy_rules": [
+        {"hum_lo": 90, "hum_hi": 100, "temp_lo": 14, "temp_hi": 23, "rain_min": 2.0, "risk_level": "critical"},
+        {"hum_lo": 80, "hum_hi": 100, "temp_lo": 10, "temp_hi": 27, "rain_min": 1.0, "risk_level": "high"},
+        {"hum_lo": 0, "hum_hi": 60, "temp_lo": 0, "temp_hi": 38, "rain_min": 0.0, "risk_level": "low"}
+      ]
+    },
+    "special_rules": {"mills_table_reference": "Pear scab Mills-type analogue"}
   }
 ]

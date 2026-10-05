@@ -17,6 +17,7 @@ from uuid import UUID
 import numpy as np
 
 from agstack_pnd.foundation.base_model import PestModelBase
+from agstack_pnd.foundation.engine_params import EngineParamsBase, FuzzyMamdaniParams
 from agstack_pnd.foundation.exceptions import ModelValidationError
 from agstack_pnd.foundation.types import (
     BioParams,
@@ -124,6 +125,8 @@ class FuzzyMamdaniRisk(PestModelBase):
         citation="OpenAgri-EU PND fuzzy risk system; Agrobit S.r.l.",
         author="AgStack Foundation / OpenAgri",
     )
+
+    engine_params_schema: ClassVar[type[EngineParamsBase] | None] = FuzzyMamdaniParams
 
     def validate_parameters(self, parameters: dict[str, object] | None) -> dict[str, object]:
         return dict(parameters) if parameters else {}

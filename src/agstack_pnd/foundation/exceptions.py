@@ -44,6 +44,14 @@ class ModelNotFound(ModelRegistryError):
         self.uuid = uuid
 
 
+class EngineTypeNotFound(ModelRegistryError):
+    """Raised when no registered model declares the requested engine_type."""
+
+    def __init__(self, engine_type: str) -> None:
+        super().__init__(f"No registered model declares engine_type '{engine_type}'")
+        self.engine_type = engine_type
+
+
 class ThreatNotFound(PNDError):
     """Raised when a crop-threat pairing is not in the catalog."""
 

@@ -4,12 +4,16 @@ from __future__ import annotations
 
 from datetime import date, datetime
 from enum import Enum
-from typing import Any, Literal
+from typing import TYPE_CHECKING, Any, Literal
 from uuid import UUID
 
 import numpy as np
 from numpy.typing import NDArray
 from pydantic import BaseModel, Field
+
+if TYPE_CHECKING:
+    from agstack_pnd.foundation.engine_params import EngineParamsBase
+    from agstack_pnd.foundation.model_registry import ModelRegistry
 
 
 # ---------------------------------------------------------------------------
@@ -179,6 +183,26 @@ class ThreatDefinition(BaseModel):
     bio_params: BioParams
     fuzzy_rules: list[FuzzyRule] = Field(default_factory=list)
     special_rules: dict[str, Any] = Field(default_factory=dict)
+    # New path: which engine this threat targets, and its typed params (raw here,
+    # validated lazily via resolve_engine_params so loading stays registry-free).
+    engine_type: str = "fuzzy_mamdani"
+    engine_params: dict[str, Any] | None = None
+
+    def resolve_engine_params(self, registry: ModelRegistry) -> EngineParamsBase:
+        """Validate and return this threat's typed engine params.
+
+        Uses ``engine_params`` when the catalog entry supplies it; otherwise
+        bridges legacy fuzzy rules.
+        """
+        # Imported lazily to avoid a module-level import cycle with engine_params.
+        from agstack_pnd.foundation.engine_params import build_legacy_fuzzy_engine_params
+
+        if self.engine_params is not None:
+            schema = registry.get_engine_params_schema(self.engine_type)
+            return schema.model_validate({"engine_type": self.engine_type, **self.engine_params})
+        return build_legacy_fuzzy_engine_params(
+            fuzzy_rules=[r.model_dump() for r in self.fuzzy_rules],
+        )
 
 
 # ---------------------------------------------------------------------------
